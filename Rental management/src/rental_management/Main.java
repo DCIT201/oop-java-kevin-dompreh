@@ -1,7 +1,11 @@
 package rental_management;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         // Create a rental agency
         RentalAgency agency = new RentalAgency();
 
@@ -19,6 +23,8 @@ public class Main {
         Customer customer = new Customer("Kevin Dompreh");
 
         // Rent a vehicle
+        System.out.println("What car would you like to rent?: ");
+        String rentCar = sc.nextLine();
         System.out.println("Renting a car...");
         Vehicle rentedVehicle = agency.rentVehicle("CAR001", customer, 5);
         System.out.println("Rented: " + rentedVehicle);
